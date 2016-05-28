@@ -10,8 +10,16 @@ module.exports = {
     app: ['webpack/hot/dev-server', './core/bootstrap.js']
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.DefinePlugin({
+      MODE: {
+        production: process.env.NODE_ENV === 'production'
+      }
+    })
   ],
+  resolve: {
+    root: __dirname + '/app'
+  },
   output: {
     path: APP,
     filename: 'bundle.js'
@@ -21,6 +29,22 @@ module.exports = {
       {
         test: /\.scss$/,
         loader: 'style!css!sass'
+      },
+      {
+        test: /\.css$/,
+        loader: 'style!css'
+      },
+      {
+        test: /\.html/,
+        loader: 'raw'
+      },
+      {
+        test: /\.json/,
+        loader: 'json'
+      },
+      {
+        test: /\.(woff|woff2|ttf|eot|svg)(\?]?.*)?$/,
+        loader: 'file-loader?name=res/[name].[ext]?[hash]'
       },
       {
         test: /\.js$/,

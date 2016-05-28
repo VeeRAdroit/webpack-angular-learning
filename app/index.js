@@ -1,4 +1,9 @@
-module.exports = angular.module('app', []);
+module.exports = angular.module('app', [
+  /* 3rd party */
+  'lumx',
+  /* modules */
+  require('./core/layout').name
+]);
 // default params
 function printMessage (status='working') {
   //let
