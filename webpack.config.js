@@ -2,7 +2,7 @@
 var webpack = require('webpack'),
 path = require('path');
 
-var APP = __dirname + '/app';
+var APP = path.join(__dirname, 'app');
 
 module.exports = {
   context: APP,
@@ -15,5 +15,18 @@ module.exports = {
   output: {
     path: APP,
     filename: 'bundle.js'
+  },
+  module: {
+    loaders: [
+      {
+        test: /\.scss$/,
+        loader: 'style!css!sass'
+      },
+      {
+        test: /\.js$/,
+        loader: 'ng-annotate!babel?presets[]=es2015!jshint',
+        exclude: /node_modules|bower_components/
+      }
+    ]
   }
 };
