@@ -1,0 +1,24 @@
+{
+  "name": "webpack-angular-learning",
+  "version": "1.0.0",
+  "description": "webpack-angular-learning demo app",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --content-base app --hot",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VeeRAdroit/webpack-angular-learning.git"
+  },
+  "author": "VeeRAdroit",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VeeRAdroit/webpack-angular-learning/issues"
+  },
+  "homepage": "https://github.com/VeeRAdroit/webpack-angular-learning#readme",
+  "devDependencies": {
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.14.1"
+  }
+}
